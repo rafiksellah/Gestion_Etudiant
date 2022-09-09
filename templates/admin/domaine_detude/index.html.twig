@@ -1,0 +1,37 @@
+{% extends 'baseAdmin.html.twig' %}
+
+{% block title %}DomaineDetude index{% endblock %}
+
+{% block body %}
+<div class="content-wrapper">    
+    <h1>DomaineDetude index</h1>
+
+    <table id="example1" class="table table-striped">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for domaine_detude in domaine_detudes %}
+            <tr>
+                <td>{{ domaine_detude.id }}</td>
+                <td>{{ domaine_detude.name }}</td>
+                <td>
+                    <a href="{{ path('app_domaine_detude_show', {'id': domaine_detude.id}) }}"class="btn btn-primary">show</a>
+                    <a href="{{ path('app_domaine_detude_edit', {'id': domaine_detude.id}) }}"class="btn btn-success">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_domaine_detude_new') }}"class="btn btn-primary">Create new</a>
+</div>    
+{% endblock %}

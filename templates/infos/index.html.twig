@@ -1,0 +1,55 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Infos index{% endblock %}
+
+{% block body %}
+    <h1>Infos index</h1>
+
+    <table id="example1" class="table table-striped">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>RentalProperty</th>
+                <th>DesiredDate</th>
+                <th>DesiredTimeLease</th>
+                <th>NumberTerms</th>
+                <th>Address</th>
+                <th>Zib</th>
+                <th>PhoneHome</th>
+                <th>PermissionStudy</th>
+                <th>HomeCollege</th>
+                <th>Remarque1</th>
+                <th>AddInfo</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for info in infos %}
+            <tr>
+                <td>{{ info.id }}</td>
+                <td>{{ info.rentalProperty }}</td>
+                <td>{{ info.desiredDate ? info.desiredDate|date('Y-m-d') : '' }}</td>
+                <td>{{ info.desiredTimeLease }}</td>
+                <td>{{ info.numberTerms }}</td>
+                <td>{{ info.address }}</td>
+                <td>{{ info.zib }}</td>
+                <td>{{ info.phoneHome }}</td>
+                <td>{{ info.permissionStudy }}</td>
+                <td>{{ info.homeCollege }}</td>
+                <td>{{ info.remarque1 }}</td>
+                <td>{{ info.addInfo }}</td>
+                <td>
+                    <a href="{{ path('app_infos_show', {'id': info.id}) }}">show</a>
+                    <a href="{{ path('app_infos_edit', {'id': info.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="13">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_infos_new') }}"class="btn btn-primary">Create new</a>
+{% endblock %}

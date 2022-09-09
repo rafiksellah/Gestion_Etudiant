@@ -1,0 +1,50 @@
+{% extends 'baseAdmin.html.twig' %}
+
+{% block title %}Hello AdminController!{% endblock %}
+
+{% block body %}
+    <div class="content-wrapper mt-4">
+        <h1>Gestion dossier</h1>
+      <table id="exampl1" class="table table-striped">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>RentalProperty</th>
+                <th>DesiredDate</th>
+                <th>DesiredTimeLease</th>
+                <th>NumberTerms</th>
+                <th>Address</th>
+                <th>Zib</th>
+                <th>Phone</th>
+                <th>PermissionStudy</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for info in infos %}
+            <tr>
+                <td>{{ info.id }}</td>
+                <td>{{ info.rentalProperty }}</td>
+                <td>{{ info.desiredDate ? info.desiredDate|date('Y-m-d') : '' }}</td>
+                <td>{{ info.desiredTimeLease }}</td>
+                <td>{{ info.numberTerms }}</td>
+                <td>{{ info.address }}</td>
+                <td>{{ info.zib }}</td>
+                <td>{{ info.phone }}</td>
+                <td>
+                    <a href="{{ asset('uploads/'~info.permissionStudy )}}"><i class="fa fa-file"></i> Fichier</a>
+                </td>
+                <td>
+                    <a href="{{ path('app_infos_show', {'id': info.id}) }}">show</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="13">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends 'baseAdmin.html.twig' %}
+
+{% block title %}LocationUniversity{% endblock %}
+
+{% block body %}
+<div class="content-wrapper">
+    <h1>LocationUniversity</h1>
+
+    <table id="example1" class="table table-striped">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ location_university.id }}</td>
+            </tr>
+            <tr>
+                <th>Location</th>
+                <td>{{ location_university.location }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_location_university_index') }}" class="btn btn-info">Retour</a>
+
+    <a href="{{ path('app_location_university_edit', {'id': location_university.id}) }}"class="btn btn-success">edit</a>
+
+    {{ include('admin/location_university/_delete_form.html.twig') }}
+</div>    
+{% endblock %}

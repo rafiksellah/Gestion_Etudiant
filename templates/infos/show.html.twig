@@ -1,0 +1,86 @@
+{% extends 'baseAdmin.html.twig' %}
+
+{% block title %}Infos{% endblock %}
+
+{% block body %}
+ 
+    <div class="content-wrapper mt-4">
+        <h4>Dossier de condidat <b>{{info.surname}} {{info.firstname}}</b></h4>
+        <table id="example1" class="table table-striped">
+            <tbody>
+                <tr>
+                    <th>Id</th>
+                    <td>{{ info.id }}</td>
+                </tr>
+                <tr>
+                    <th>RentalProperty</th>
+                    <td>{{ info.rentalProperty }}</td>
+                </tr>
+                <tr>
+                    <th>DesiredDate</th>
+                    <td>{{ info.desiredDate ? info.desiredDate|date('Y-m-d') : '' }}</td>
+                </tr>
+                <tr>
+                    <th>DesiredTimeLease</th>
+                    <td>{{ info.desiredTimeLease }}</td>
+                </tr>
+                <tr>
+                    <th>NumberTerms</th>
+                    <td>{{ info.numberTerms }}</td>
+                </tr>
+                <tr>
+                    <th>Address</th>
+                    <td>{{ info.address }}</td>
+                </tr>
+                <tr>
+                    <th>Zib</th>
+                    <td>{{ info.zib }}</td>
+                </tr>
+                <tr>
+                    <th>PhoneHome</th>
+                    <td>
+                    {% if info.phoneHome %}
+                        {{ info.phoneHome }}
+                    {% else %}
+                        /    
+                    {% endif %}
+                    </td>
+                </tr>
+                <tr>
+                    <th>PermissionStudy</th>
+                    <td><a href="{{ asset('uploads/'~info.permissionStudy )}}"><i class="fa fa-file"></i> Fichier</a></td>
+                </tr>
+                <tr>
+                    <th>HomeCollege</th>
+                    <td>{{ info.homeCollege }}</td>
+                </tr>
+                <tr>
+                    <th>Remarque1</th>
+                    <td>{{ info.remarque1 }}</td>
+                </tr>
+                <tr>
+                    <th>AddInfo</th>
+                    <td>{{ info.addInfo }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="content-wrapper mt-4">
+        <div class="row ml-2">
+            <div class="col-md-4">
+                <a class="btn btn-primary" href="{{path('app_admin_mail_refus',{'id': info.id})}}">Envoyer email refus</a>
+            </div>
+            <div class="col-md-4">
+                <a class="btn btn-primary" href="{{path('app_admin_mail_accept',{'id': info.id})}}">Envoyer email ok</a>
+            </div>
+            <div class="col-md-4">
+                <a class="btn btn-primary" href="{{path('app_admin_mail',{'id': info.id})}}">Envoyer email Entretien</a>
+            </div>
+        </div>
+    </div>
+    {# <a href="{{ path('app_infos_index') }}" class="btn btn-info">Retour</a>
+
+    <a href="{{ path('app_infos_edit', {'id': info.id}) }}">edit</a>
+
+    {{ include('infos/_delete_form.html.twig') }} #}
+{% endblock %}

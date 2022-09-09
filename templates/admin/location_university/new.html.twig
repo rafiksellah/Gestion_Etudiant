@@ -1,0 +1,13 @@
+{% extends 'baseAdmin.html.twig' %}
+
+{% block title %}New LocationUniversity{% endblock %}
+
+{% block body %}
+<div class="content-wrapper">
+    <h1>Create new LocationUniversity</h1>
+
+    {{ include('admin/location_university/_form.html.twig') }}
+
+    <a href="{{ path('app_location_university_index') }}" class="btn btn-info">Retour</a>
+</div>    
+{% endblock %}

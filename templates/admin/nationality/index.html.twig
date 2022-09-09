@@ -1,0 +1,37 @@
+{% extends 'baseAdmin.html.twig' %}
+
+{% block title %}Nationality index{% endblock %}
+
+{% block body %}
+<div class="content-wrapper">
+    <h1>Nationality index</h1>
+
+    <table id="example1" class="table table-striped">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for nationality in nationalities %}
+            <tr>
+                <td>{{ nationality.id }}</td>
+                <td>{{ nationality.name }}</td>
+                <td>
+                    <a href="{{ path('app_nationality_show', {'id': nationality.id}) }}"class="btn btn-primary">show</a>
+                    <a href="{{ path('app_nationality_edit', {'id': nationality.id}) }}"class="btn btn-success">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_nationality_new') }}"class="btn btn-primary">Create new</a>
+ </div>
+ {% endblock %}

@@ -1,0 +1,13 @@
+{% extends 'baseAdmin.html.twig' %}
+
+{% block title %}New DomaineDetude{% endblock %}
+
+{% block body %}*
+<div class="content-wrapper">
+    <h1>Create new DomaineDetude</h1>
+
+    {{ include('admin/domaine_detude/_form.html.twig') }}
+
+    <a href="{{ path('app_domaine_detude_index') }}" class="btn btn-info">Retour</a>
+</div>    
+{% endblock %}

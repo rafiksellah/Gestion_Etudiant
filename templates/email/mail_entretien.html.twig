@@ -1,0 +1,22 @@
+{% extends 'baseAdmin.html.twig' %}
+
+{% block title %}E-mail entretien{% endblock %}
+
+{% block body %}
+<div class="content-wrapper">
+    <h1>E-mail Entretien</h1>
+    {{ form_start(form) }}
+    <div class="border">
+        <div class="form-group">
+            <label class="required" for="message">Message*</label>
+            {{ form_widget(form.message) }}
+
+            <div class="form-error">
+                {{ form_errors(form.message) }}
+            </div>
+        </div>
+        <button class="btn btn-success mt-3">{{ button_label|default('Save') }}</button>
+    </div>
+    <a href="{{ path('app_program_new') }}"class="btn btn-primary">Enovyer</a>
+</div>    
+{% endblock %}

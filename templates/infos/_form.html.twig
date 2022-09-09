@@ -1,0 +1,238 @@
+{{ form_start(form) }}
+    <div class="border">
+        <h4>Data about the rental property</h4>
+        <div class="form-group">
+            <i class="fa fa-student"></i> {{ form_label(form.locationUniversity) }}
+            {{ form_widget(form.locationUniversity) }}
+
+            <div class="form-error">
+                {{ form_errors(form.locationUniversity) }}
+            </div>
+        </div>
+        <div class="form-group">
+            <i class="fa fa-student"></i> {{ form_label(form.rentalProperty) }}
+            {{ form_widget(form.rentalProperty) }}
+
+            <div class="form-error">
+                {{ form_errors(form.rentalProperty) }}
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="required" for="desiredDate">Available choices of our student residances</label>
+            {{ form_widget(form.studentResidance) }}
+
+            <div class="form-error">
+                {{ form_errors(form.studentResidance) }}
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="required" for="desiredDate">University</label>
+            {{ form_widget(form.university) }}
+
+            <div class="form-error">
+                {{ form_errors(form.university) }}
+            </div>
+        </div>
+        <div class="form-group">
+        <label class="required" for="desiredDate">Desired date for moving</label>
+            {{ form_widget(form.desiredDate) }}
+
+            <div class="form-error">
+                {{ form_errors(form.desiredDate) }}
+            </div>
+        </div>
+        <div class="form-group">
+        <label class="required" for="desiredDate"><i class="fa fa-student"></i>Desired term of lease</label>
+            {{ form_widget(form.desiredTimeLease) }}
+
+            <div class="form-error">
+                {{ form_errors(form.desiredTimeLease) }}
+            </div>
+        </div>
+    </div>
+    
+    <div class="border mt-3">
+        <h4>Personal Data</h4>
+        <div class="form-group">
+            <label class="required" for="surname">Surname/last name (Please fill out identical to your passport/documents)*</label>
+            {{ form_widget(form.surname) }}
+
+            <div class="form-error">
+                {{ form_errors(form.surname) }}
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="required" for="firstname">First/given name (Please fill out identical to your passport/documents)*</label>
+            {{ form_widget(form.firstname) }}
+
+            <div class="form-error">
+                {{ form_errors(form.firstname) }}
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="required" for="Birth">Birth name</label>
+            {{ form_widget(form.birthname) }}
+
+            <div class="form-error">
+                {{ form_errors(form.birthname) }}
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="required" for="desiredDate">Date of birth*</label>
+            {{ form_widget(form.birthday) }}
+
+            <div class="form-error">
+                {{ form_errors(form.birthday) }}
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="required" for="desiredDate">Sex*</label>
+            {{ form_widget(form.sex) }}
+
+            <div class="form-error">
+                {{ form_errors(form.sex) }}
+            </div>
+        </div>
+        <div class="form-group">
+        <label class="required" for="desiredDate">Nationality*</label>
+            {{ form_widget(form.nationality) }}
+
+            <div class="form-error">
+                {{ form_errors(form.nationality) }}
+            </div>
+        </div>
+        <div class="form-group">
+        <label class="required" for="desiredDate">Email address*</label>
+            {{ form_widget(form.email) }}
+ 
+            <div class="form-error">
+                {{ form_errors(form.email) }}
+            </div>
+        </div>
+        <div class="form-group">
+        <label class="required" for="desiredDate">Repeat e-mail*</label>
+            {{ form_widget(form.repeatEmail) }}
+ 
+            <div class="form-error">
+                {{ form_errors(form.repeatEmail) }}
+            </div>
+        </div>
+    </div>
+
+    <div class="border mt-3">
+        <h4>Data about the study course</h4>
+        <div class="form-group">
+            <label class="required" for="surname">Field of study*</label>
+            {{ form_widget(form.domaineDetude) }}
+
+            <div class="form-error">
+                {{ form_errors(form.domaineDetude) }}
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="required" for="firstname">Program*</label>
+            {{ form_widget(form.program) }}
+
+            <div class="form-error">
+                {{ form_errors(form.program) }}
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="required" for="Birth">Number of terms* </label>
+            {{ form_widget(form.numberTerms) }}
+
+            <div class="form-error">
+                {{ form_errors(form.numberTerms) }}
+            </div>
+        </div>
+    </div>
+    
+    <div class="border mt-3">
+        <h4>Home address</h4>
+        <div class="form-group">
+            <label class="required" for="surname">Street home address*</label>
+            {{ form_widget(form.address) }}
+
+            <div class="form-error">
+                {{ form_errors(form.address) }}
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="required" for="firstname">ZIP/City Home address*</label>
+            {{ form_widget(form.zib) }}<br>
+            {{ form_widget(form.city) }}
+
+            <div class="form-error">
+                {{ form_errors(form.zib) }}
+                {{ form_errors(form.city) }}
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="required" for="Birth">Home Country* </label>
+            {{ form_widget(form.country) }}
+
+            <div class="form-error">
+                {{ form_errors(form.country) }}
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="required" for="Birth">Phone No home address </label>
+            {{ form_widget(form.phoneHome) }}
+
+            <div class="form-error">
+                {{ form_errors(form.phoneHome) }}
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="required" for="Birth">Mobile Phone </label>
+            {{ form_widget(form.phone) }}
+
+            <div class="form-error">
+                {{ form_errors(form.phone) }}
+            </div>
+        </div>
+    </div>
+
+    <div class="border mt-3">
+        <h4>Upload documents</h4>
+        <div class="form-group">
+            <label class="required" for="surname">Permission to study/Certificate of enrolment*</label>
+            {{ form_widget(form.permissionStudy) }}
+
+            <div class="form-error">
+                {{ form_errors(form.permissionStudy) }}
+            </div>
+        </div>
+    </div>
+    <div class="border mt-3">
+        <h4>Other application fields</h4>
+        <div class="form-group">
+            <label class="required" for="surname">Home College/University*</label>
+            {{ form_widget(form.homeCollege) }}
+
+            <div class="form-error">
+                {{ form_errors(form.homeCollege) }}
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="required" for="surname">Will you be attending a language course before semester begin*</label>
+            {{ form_widget(form.remarque1) }}
+
+            <div class="form-error">
+                {{ form_errors(form.remarque1) }}
+            </div>
+        </div>
+    </div>
+    <div class="border mt-3">
+        <h4>Additional information</h4>
+        <div class="form-group">
+            {{ form_widget(form.addInfo) }}
+
+            <div class="form-error">
+                {{ form_errors(form.addInfo) }}
+            </div>
+        </div>
+    </div>
+
+    <button class="btn btn-success mt-3">{{ button_label|default('Envoyer') }}</button>
+{{ form_end(form) }}

@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Infos{% endblock %}
+
+{% block body %}
+<header class="masthead" style="background-image: url('{{asset('assets/img/image-grise.jpg')}}')">
+    <div class="container position-relative px-4 px-lg-5 border">
+        <h2 class="text-center" style="color:white">Student Service Gieben</h2>
+            {% if infoUser is defined %}
+                {# <a href="{{path('app_ma_demande',{'id':infoUser.id})}}" class="btn btn-primary">Download document</a> #}
+            {% endif %}
+            
+        <div class="row mt-2">
+            <div class="col-md-6 mx-auto">
+                {{ include('infos/_form.html.twig') }}           
+            </div>
+        </div>
+    </div>
+</header>
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends 'baseAdmin.html.twig' %}
+
+{% block title %}Edit LocationUniversity{% endblock %}
+
+{% block body %}
+<div class="content-wrapper">
+    <h1>Edit LocationUniversity</h1>
+
+    {{ include('admin/location_university/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('app_location_university_index') }}" class="btn btn-info">Retour</a>
+
+    {{ include('admin/location_university/_delete_form.html.twig') }}
+</div>    
+{% endblock %}

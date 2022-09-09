@@ -1,0 +1,37 @@
+{% extends 'baseAdmin.html.twig' %}
+
+{% block title %}University index{% endblock %}
+
+{% block body %}
+<div class="content-wrapper">
+    <h1>University index</h1>
+
+    <table id="example1" class="table table-striped">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for university in universities %}
+            <tr>
+                <td>{{ university.id }}</td>
+                <td>{{ university.name }}</td>
+                <td>
+                    <a href="{{ path('app_university_show', {'id': university.id}) }}"class="btn btn-primary">show</a>
+                    <a href="{{ path('app_university_edit', {'id': university.id}) }}"class="btn btn-success">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_university_new') }}"class="btn btn-primary">Create new</a>
+</div>    
+{% endblock %}

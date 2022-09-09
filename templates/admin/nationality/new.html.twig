@@ -1,0 +1,13 @@
+{% extends 'baseAdmin.html.twig' %}
+
+{% block title %}New Nationality{% endblock %}
+
+{% block body %}
+<div class="content-wrapper">
+    <h1>Create new Nationality</h1>
+
+    {{ include('admin/nationality/_form.html.twig') }}
+
+    <a href="{{ path('app_nationality_index') }}" class="btn btn-info">Retour</a>
+</div>    
+{% endblock %}
